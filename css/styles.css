@@ -1,0 +1,215 @@
+/* 3. Estilos Básicos: Implementación de Google Fonts */
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente principal */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #6f4e37; /* Color café */
+}
+
+/* 3. Estilos Básicos: Estilos header */
+header {
+    background-color: #4a2c1a;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+}
+
+/* 3. Estilos Básicos: Estilos lista de navegación (nav) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5em 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #6f4e37;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 3. Estilos Básicos: Propiedades de background (degradado) */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #f8f0e3, #e3dcd1); /* Degradado suave */
+    border-radius: 8px;
+}
+
+.multimedia-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.multimedia-container img, .multimedia-container iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+/* Asegurar que el iframe se vea bien en móviles */
+.main-video {
+    width: 100%;
+    max-width: 560px;
+    height: 315px; /* Altura estándar de video */
+}
+
+
+/* 4. Diseño Responsivo con Flexbox: Sección Productos */
+.productos-flexbox {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las cards salten de línea */
+    gap: 20px;
+    justify-content: center; /* Centra las cards */
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px; /* Flex Grow: 1, Flex Shrink: 1, Base Width: 300px */
+    text-align: center;
+    min-width: 250px;
+    max-width: 350px;
+}
+
+.card h3 {
+    color: #4a2c1a;
+}
+.precio {
+    font-weight: 700;
+    color: #b76e46;
+    font-size: 1.2em;
+}
+
+/* 4. Diseño Responsivo con Grid: Sección Reseñas */
+.reseñas-grid {
+    display: grid;
+    /* Distribución lógica y estética: 3 columnas en desktop, adaptándose a 1 en móvil */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.reseña-item {
+    background-color: #fff9f0;
+    padding: 20px;
+    border-left: 5px solid #6f4e37;
+    font-style: italic;
+    border-radius: 4px;
+}
+
+.reseña-item footer {
+    text-align: right;
+    font-weight: 700;
+    color: #4a2c1a;
+    margin-top: 10px;
+}
+
+/* 4. Diseño Responsivo: Sección Contacto (Base) */
+.contact-form {
+    display: grid;
+    gap: 15px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.contact-form label {
+    font-weight: 700;
+    margin-bottom: -5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Importante para el padding */
+}
+
+.contact-form button {
+    background-color: #6f4e37;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #4a2c1a;
+}
+
+/* 3. Estilos Básicos: Estilos footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 40px;
+}
+
+/* 4. Diseño Responsivo con Media Queries: Sección Contacto */
+/* Para pantallas más pequeñas (ejemplo: móviles) */
+@media (max-width: 768px) {
+    /* La sección Contacto ya usa grid de una columna con max-width en su base, 
+       pero podemos hacerla más compacta para móviles */
+    .contacto-section {
+        padding: 20px 10px;
+    }
+    
+    .contact-form {
+        max-width: 90%; /* Ocupa más del ancho de la pantalla */
+        margin: 10px auto;
+    }
+
+    /* Ajuste para el contenido multimedia en móviles */
+    .multimedia-container {
+        flex-direction: column;
+    }
+    .main-image, .main-video {
+        width: 100%;
+    }
+}

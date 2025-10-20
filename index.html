@@ -3,22 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subida al sevidor</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>Tienda de Café - Mi Proyecto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1>☕ Tienda de Café Expresso</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#reseñas">Reseñas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <section>
-            <h2> SUBIDA AL SERVIDOR </h2>
-            <h3> Netlify </h3>
-            <h3> Guthub </h3>
+        <section id="inicio" class="hero">
+            <h2>El Mejor Café de la Ciudad</h2>
+            <p>Descubre nuestra selección artesanal de granos de todo el mundo.</p>
+            <div class="multimedia-container">
+                <img src="https://via.placeholder.com/600x300?text=Café+Fresco" alt="Granos de café fresco" class="main-image">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="main-video"></iframe>
+            </div>
         </section>
-        <section></section>
+
+        <section id="productos">
+            <h2>Nuestros Productos Destacados</h2>
+            <div class="productos-flexbox">
+                <article class="card">
+                    <h3>Blend Clásico</h3>
+                    <p>Un sabor equilibrado para el día a día.</p>
+                    <p class="precio">$1599</p>
+                </article>
+                <article class="card">
+                    <h3>Origen Único: Colombia</h3>
+                    <p>Notas dulces y cuerpo medio.</p>
+                    <p class="precio">$1850</p>
+                </article>
+                <article class="card">
+                    <h3>Edición Limitada</h3>
+                    <p>El café más exótico de la temporada.</p>
+                    <p class="precio">$2500</p>
+                </article>
+                <article class="card">
+                    <h3>Café Brasil: Suave y Equilibrado</h3>
+                    <p>Notas de chocolate, nueces y caramelo</p>
+                    <p class="precio">$1850</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="reseñas">
+            <h2>Lo Que Dicen Nuestros Clientes</h2>
+            <div class="reseñas-grid">
+                <blockquote class="reseña-item">
+                    <p>"El mejor expresso que he probado. 5 estrellas."</p>
+                    <footer>— Ana R.</footer>
+                </blockquote>
+                <blockquote class="reseña-item">
+                    <p>"Excelente atención y granos de alta calidad."</p>
+                    <footer>— Carlos G.</footer>
+                </blockquote>
+                <blockquote class="reseña-item">
+                    <p>"Mi lugar favorito para comprar café en línea."</p>
+                    <footer>— Sofía M.</footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto-section">
+            <h2>Contáctanos</h2>
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="contact-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="_replyto" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+            <p>También puedes encontrarnos en:</p>
+            <address>Av. Principal 123, Ciudadela</address>
+        </section>
     </main>
 
-    <footer></footer>
-    
+    <footer>
+        <p>&copy; 2025 Tienda de Café Expresso. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
