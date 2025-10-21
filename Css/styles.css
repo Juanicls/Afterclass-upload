@@ -1,0 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
+/*HEADER*/
+.header{
+    background-color: hsl(205, 43%, 95%);
+}
+
+/*Nav*/
+nav{
+    ul {
+    list-style-type: none; /* Quita las viñetas */
+    padding-left: 0;      /* Opcional: Quita el espacio a la izquierda que dejan las viñetas */
+    margin: 0;            /* Opcional: Resetea el margen predeterminado */
+}
+    font-family: Oswald , Verdana, Tahoma, sans-serif;
+    font-size: medium;
+
+}
+
+/*SERVICIOS*/
+/* Mantenemos el diseño de cuadrícula */
+
+.servicios-grid {
+    display: grid;
+    /* Puedes ajustar el minmax si quieres que sean más anchos o más angostos */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 30px; 
+    padding: 30px;
+}
+
+.servicio-tarjeta {
+    /* La apariencia de la tarjeta */
+    display: block; 
+    text-align: center;
+    padding: 15px 15px; /* Aumentamos el padding para dar más espacio al ícono */
+    border: 1px solid #ddd; 
+    border-radius: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+    text-decoration: none; 
+    color: #333; 
+    background-color: white; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* 🚨 ESTA ES LA CLAVE PARA EL TAMAÑO GRANDE 🚨 */
+.servicio-icono-wrap img {
+    /* Aumentamos el tamaño del ícono */
+    width: 100%; /* Tamaño del ícono, puedes hacerlo más grande (ej: 100px) */
+    height: auto;
+    margin-bottom: 20px; /* Más espacio entre el ícono y el título */
+}
+
+.servicio-tarjeta:hover {
+    /* Efecto al pasar el mouse */
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.servicio-titulo {
+    /* Estilo del título */
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0;
+}
