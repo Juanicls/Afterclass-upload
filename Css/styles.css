@@ -1,66 +1,288 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-
-
-/*HEADER*/
-.header{
-    background-color: hsl(205, 43%, 95%);
+/* HEADER */
+.menu{
+    background-color: #f0f0f0;
+    /* Ajustamos el border-bottom para que el color sea visible (no #ccc) */
+    border-bottom: 2px solid #ddd; 
+    padding: 10px 20px; /* Añadir padding para móviles */
 }
 
-/*Nav*/
-nav{
-    ul {
-    list-style-type: none; /* Quita las viñetas */
-    padding-left: 0;      /* Opcional: Quita el espacio a la izquierda que dejan las viñetas */
-    margin: 0;            /* Opcional: Resetea el margen predeterminado */
-}
-    font-family: Oswald , Verdana, Tahoma, sans-serif;
-    font-size: medium;
-
-}
-
-/*SERVICIOS*/
-/* Mantenemos el diseño de cuadrícula */
-
-.servicios-grid {
-    display: grid;
-    /* Puedes ajustar el minmax si quieres que sean más anchos o más angostos */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-    gap: 30px; 
-    padding: 30px;
-}
-
-.servicio-tarjeta {
-    /* La apariencia de la tarjeta */
-    display: block; 
+.logo{
     text-align: center;
-    padding: 15px 15px; /* Aumentamos el padding para dar más espacio al ícono */
-    border: 1px solid #ddd; 
-    border-radius: 30px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
-    text-decoration: none; 
-    color: #333; 
-    background-color: white; 
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding-top: 20px; /* Reducir el padding de 50px para ahorrar espacio en móvil */
 }
 
-/* 🚨 ESTA ES LA CLAVE PARA EL TAMAÑO GRANDE 🚨 */
-.servicio-icono-wrap img {
-    /* Aumentamos el tamaño del ícono */
-    width: 100%; /* Tamaño del ícono, puedes hacerlo más grande (ej: 100px) */
-    height: auto;
-    margin-bottom: 20px; /* Más espacio entre el ícono y el título */
+/* NAV: Estilos para el contenedor */
+/*
+====================================
+ESTILOS GLOBALES Y CONTENEDOR PRINCIPAL
+====================================
+*/
+.main-nav {
+    /* 1. LAYOUT PRINCIPAL: Apila y Centra */
+    display: flex;
+    flex-direction: column; /* Apila el logo y el menú verticalmente */
+    align-items: center;    /* Centra el logo y el menú horizontalmente */
+    position: relative;     /* Necesario para posicionar el CTA de forma absoluta */
+
+    padding: 20px 0;
+    background-color: #FFFFFF; /* Fondo blanco (Limpieza) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil y profesional */
+    font-family: Arial, sans-serif; /* Fuente base */
 }
 
-.servicio-tarjeta:hover {
-    /* Efecto al pasar el mouse */
-    transform: translateY(-8px); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+/* 2. LOGO */
+.logo {
+    margin-bottom: 15px; /* Espacio entre el logo y el menú */
 }
 
-.servicio-titulo {
-    /* Estilo del título */
-    font-size: 1.3em;
-    font-weight: bold;
+/*
+====================================
+ENLACES DE NAVEGACIÓN
+====================================
+*/
+
+.nav-links {
+    list-style: none;
+    display: flex;        /* Coloca los ítems de lista horizontalmente */
     margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 18px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333333; /* Gris oscuro para buena legibilidad */
+    font-weight: 500;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007BFF; /* Acento azul (Confianza) al pasar el ratón */
+}
+
+/*
+====================================
+BOTÓN CTA (CALL TO ACTION)
+====================================
+*/
+
+.cta-button {
+    /* Posicionamiento en la esquina superior derecha */
+    position: absolute; 
+    top: 30px; 
+    right: 50px;
+
+    /* Estilo de soporte técnico */
+    background-color: #999a9b; /* Acento azul brillante */
+    color: rgb(15, 15, 15);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+.cta-button:hover {
+    background-color: #f7f8fa; /* Tono de azul más oscuro al pasar el ratón */
+}
+
+/*
+====================================
+MENÚ DESPLEGABLE (DROPDOWN)
+====================================
+*/
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none; /* OCULTAR por defecto */
+    position: absolute;
+    top: 100%; /* Colocar debajo del enlace principal */
+    left: 50%;
+    transform: translateX(-50%); /* Centrar el dropdown bajo el enlace */
+
+    background-color: #FFFFFF;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Asegura que esté sobre otros elementos */
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* MOSTRAR al pasar el ratón */
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content a {
+    color: #333333;
+    padding: 8px 15px;
+    display: block; /* Permite que el padding funcione en toda el área */
+    font-weight: normal;
+}
+
+.dropdown-content a:hover {
+    background-color: #F5F5F5; /* Gris claro en el fondo del ítem */
+    color: #88898a; /* Mantiene el acento al interactuar */
+}
+
+/* Servicios */
+
+.Titulo-servicios {  
+    color: black;
+    text-align: center;
+    background-color: rgba(197, 192, 253, 0.808);
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+    ;
+}
+.servicios-wrapper {
+    display: flex; /* O usa grid, pero con flex es más simple para empezar */
+    flex-wrap: wrap; /* Para que las tarjetas salten a la siguiente fila en pantallas pequeñas */
+    justify-content: center; /* Centra las tarjetas en el medio */
+    gap: 25px; /* Espacio entre las tarjetas */
+    max-width: 1200px; /* Limita el ancho total del contenedor */
+    margin: 0 auto;
+}
+
+
+.serv-container {
+    /* Define el ancho de la tarjeta. Puedes usar un valor fijo o una fracción */
+    width: 250px; /* Por ejemplo, un ancho que funcione bien en 3 columnas */
+    text-align: center; /* Centra el contenido dentro de la tarjeta (incluida la imagen) */
+    border: solid rgb(230, 228, 245);
+    border-radius: 8px;
+    padding: 0px; /* Añade padding para que no quede pegado al borde */
+    margin-bottom:8px;
+}
+
+
+.imagen-card {
+    text-align: center;
+    width: 360%; 
+    height: auto; 
+    max-width: 150px; /* Por ejemplo, para que el icono no sea tan grande */
+    display: block; /* Ayuda a controlar mejor los márgenes */
+    margin: 0 auto; /* Centra la imagen dentro de la tarjeta */
+    padding: 0;
+}
+
+/*PRODUCTOS*/
+.productos{
+    color: black;
+    padding: 10px;
+    border-bottom: 2px solid;
+}
+.titulo-productos{
+    color: black;
+    text-align: center;
+    background-color: rgba(197, 192, 253, 0.808);
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+    ;
+    
+}
+.prod-container {
+   display: flex;
+   justify-content: space-around; 
+   flex-wrap: wrap;
+   gap: 25px 15px;
+}
+
+.prod-item{
+    border: solid rgb(212, 208, 252);
+    border-radius: 8px;
+    padding: 8px;
+
+}
+.item-tit{
+    color: black;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+    ;
+    margin: 8px auto ;
+}
+.imagen-card{
+    text-align: center;
+
+}
+.precio {
+    color: black;
+    font-size: 24px;
+    font-weight: 600;
+    margin: auto 8px;
+    padding: 0px;
+
+}
+
+.oferta{
+    color: red;
+}
+
+.descripcion{
+    color: black;
+    width:280px
+}
+
+.botonera{
+    text-align: center;
+}
+
+.boton-agregar{
+    background-color: rgb(219, 217, 217);
+    border-radius: 5px;
+}
+.boton-agregar:hover{
+        background-color: rgb(87, 86, 86);
+    font-size: 15px;
+}
+
+/*UBICACION*/
+.ubi{
+    text-align: center;
+    background-color: #ccc;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+/*MAPA*/
+.mapa {
+    
+    text-align: center;
+    width: 320px;
+    height: 320px;
+    margin: 50px;
+
+}
+
+.contact {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:rgb(219, 217, 217);
+    width: 100%;
+    text-align: center;
+    border-top: 2px solid #ccc;
+    
+}
+
+footer {
+  /* 1. Cambiar el color de fondo a gris */
+  background-color: #f0f0f0; /* Un gris claro y común */
+
+  /* 2. Añadir una línea de separación en la parte superior */
+  /* El formato es: grosor | estilo | color */
+  border-top: 2px solid #ccc; /* 2px de grosor, línea sólida, color gris medio */
+
+  /* 3. (Opcional pero recomendado) Añadir un poco de espacio */
+  padding: 15px;
 }
