@@ -1,6 +1,12 @@
+/*FUENTE*/
+ <style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+  </style>
+
 
 /* HEADER */
 .menu{
+    background-image: ;
     background-color: #f0f0f0;
     /* Ajustamos el border-bottom para que el color sea visible (no #ccc) */
     border-bottom: 2px solid #ddd; 
@@ -20,6 +26,7 @@ ESTILOS GLOBALES Y CONTENEDOR PRINCIPAL
 */
 .main-nav {
     /* 1. LAYOUT PRINCIPAL: Apila y Centra */
+    width: 100%;
     display: flex;
     flex-direction: column; /* Apila el logo y el menú verticalmente */
     align-items: center;    /* Centra el logo y el menú horizontalmente */
@@ -38,11 +45,37 @@ ESTILOS GLOBALES Y CONTENEDOR PRINCIPAL
 
 /*
 ====================================
+Inicio
+====================================
+*/
+
+.texto-inicio {
+    width: 100%;
+    text-align: center;
+    font-family: 'Open+SansM,Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+    text-shadow: #ccc;
+    }
+
+.back-img {
+    width: 100%;
+    background-image: url(/Talento-lab/Media/img/img-back2.png);
+    filter: opacity(90%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+}
+
+
+/*
+====================================
 ENLACES DE NAVEGACIÓN
 ====================================
 */
 
 .nav-links {
+    
     list-style: none;
     display: flex;        /* Coloca los ítems de lista horizontalmente */
     margin: 0;
@@ -50,10 +83,12 @@ ENLACES DE NAVEGACIÓN
 }
 
 .nav-links li {
+    width: 100%;
     margin: 0 18px;
 }
 
 .nav-links a {
+    width: 100%;
     text-decoration: none;
     color: #333333; /* Gris oscuro para buena legibilidad */
     font-weight: 500;
@@ -62,52 +97,25 @@ ENLACES DE NAVEGACIÓN
 }
 
 .nav-links a:hover {
-    color: #007BFF; /* Acento azul (Confianza) al pasar el ratón */
+    color: #56cbe9; /* Acento azul (Confianza) al pasar el ratón */
 }
 
 /*
 ====================================
-BOTÓN CTA (CALL TO ACTION)
+MENÚ DESPLEGABLE INICIO (DROPDOWN)
 ====================================
 */
-
-.cta-button {
-    /* Posicionamiento en la esquina superior derecha */
-    position: absolute; 
-    top: 30px; 
-    right: 50px;
-
-    /* Estilo de soporte técnico */
-    background-color: #999a9b; /* Acento azul brillante */
-    color: rgb(15, 15, 15);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    white-space: nowrap; /* Evita que el texto se rompa */
-}
-
-.cta-button:hover {
-    background-color: #f7f8fa; /* Tono de azul más oscuro al pasar el ratón */
-}
-
-/*
-====================================
-MENÚ DESPLEGABLE (DROPDOWN)
-====================================
-*/
-
-.dropdown {
+.dropdown-inicio {
     position: relative;
 }
 
-.dropdown-content {
+.dropdown-content-inicio {
+    width: 100%;
     display: none; /* OCULTAR por defecto */
     position: absolute;
     top: 100%; /* Colocar debajo del enlace principal */
-    left: 50%;
-    transform: translateX(-50%); /* Centrar el dropdown bajo el enlace */
+    left: 90%;
+    transform: translateX(-40%); /* Centrar el dropdown bajo el enlace */
 
     background-color: #FFFFFF;
     min-width: 180px;
@@ -118,15 +126,70 @@ MENÚ DESPLEGABLE (DROPDOWN)
     border-radius: 5px;
 }
 
+.dropdown-inicio:hover .dropdown-content-inicio {
+    
+    display: block; /* MOSTRAR al pasar el ratón */
+}
+
+.dropdown-content-inicio li {
+    
+    margin: 0;
+}
+
+.dropdown-content-inicio a {
+    width: 100%;
+    color: #333333;
+    padding: 8px 15px;
+    display: block; /* Permite que el padding funcione en toda el área */
+    font-weight: normal;
+}
+
+.dropdown-content-inicio a:hover {
+    width: 100%;
+    background-color: #f5f5f500; /* Gris claro en el fondo del ítem */
+    color: #26edfc; /* Mantiene el acento al interactuar */
+}
+
+/*
+====================================
+MENÚ DESPLEGABLE (DROPDOWN)
+====================================
+*/
+
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    width: 100%;
+    display: none; /* OCULTAR por defecto */
+    position: absolute;
+    top: 100%; /* Colocar debajo del enlace principal */
+    left: 60%;
+    transform: translateX(-40%); /* Centrar el dropdown bajo el enlace */
+
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Asegura que esté sobre otros elementos */
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
 .dropdown:hover .dropdown-content {
+    
     display: block; /* MOSTRAR al pasar el ratón */
 }
 
 .dropdown-content li {
+    
     margin: 0;
 }
 
 .dropdown-content a {
+    width: 100%;
     color: #333333;
     padding: 8px 15px;
     display: block; /* Permite que el padding funcione en toda el área */
@@ -134,43 +197,16 @@ MENÚ DESPLEGABLE (DROPDOWN)
 }
 
 .dropdown-content a:hover {
-    background-color: #F5F5F5; /* Gris claro en el fondo del ítem */
-    color: #88898a; /* Mantiene el acento al interactuar */
+    width: 100%;
+    background-color: #f5f5f500; /* Gris claro en el fondo del ítem */
+    color: #26edfc; /* Mantiene el acento al interactuar */
 }
 
-/* Servicios */
-
-.Titulo-servicios {  
-    color: black;
-    text-align: center;
-    background-color: rgba(197, 192, 253, 0.808);
-    font-family: Verdana, Geneva, Tahoma, sans-serif
-    ;
-}
-.servicios-wrapper {
-    display: flex; /* O usa grid, pero con flex es más simple para empezar */
-    flex-wrap: wrap; /* Para que las tarjetas salten a la siguiente fila en pantallas pequeñas */
-    justify-content: center; /* Centra las tarjetas en el medio */
-    gap: 25px; /* Espacio entre las tarjetas */
-    max-width: 1200px; /* Limita el ancho total del contenedor */
-    margin: 0 auto;
-}
-
-
-.serv-container {
-    /* Define el ancho de la tarjeta. Puedes usar un valor fijo o una fracción */
-    width: 250px; /* Por ejemplo, un ancho que funcione bien en 3 columnas */
-    text-align: center; /* Centra el contenido dentro de la tarjeta (incluida la imagen) */
-    border: solid rgb(230, 228, 245);
-    border-radius: 8px;
-    padding: 0px; /* Añade padding para que no quede pegado al borde */
-    margin-bottom:8px;
-}
 
 
 .imagen-card {
     text-align: center;
-    width: 360%; 
+    width: 100%; 
     height: auto; 
     max-width: 150px; /* Por ejemplo, para que el icono no sea tan grande */
     display: block; /* Ayuda a controlar mejor los márgenes */
@@ -180,19 +216,25 @@ MENÚ DESPLEGABLE (DROPDOWN)
 
 /*PRODUCTOS*/
 .productos{
+   width: 100%;
     color: black;
     padding: 10px;
     border-bottom: 2px solid;
 }
 .titulo-productos{
+    border-top: #777777 2px solid;
+    border-bottom: #777777 2px solid;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    width: 100%;
     color: black;
     text-align: center;
-    background-color: rgba(197, 192, 253, 0.808);
     font-family: Verdana, Geneva, Tahoma, sans-serif
     ;
     
 }
 .prod-container {
+   width: 100%;
    display: flex;
    justify-content: space-around; 
    flex-wrap: wrap;
@@ -200,7 +242,7 @@ MENÚ DESPLEGABLE (DROPDOWN)
 }
 
 .prod-item{
-    border: solid rgb(212, 208, 252);
+    border: solid rgb(193, 193, 199);
     border-radius: 8px;
     padding: 8px;
 
@@ -259,13 +301,15 @@ MENÚ DESPLEGABLE (DROPDOWN)
 .mapa {
     
     text-align: center;
-    width: 320px;
+    width: 100%;
     height: 320px;
-    margin: 50px;
+   
+    
 
 }
 
 .contact {
+    width: 100%;
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color:rgb(219, 217, 217);
@@ -277,6 +321,8 @@ MENÚ DESPLEGABLE (DROPDOWN)
 
 footer {
   /* 1. Cambiar el color de fondo a gris */
+  width: 100%;
+  text-align: center;
   background-color: #f0f0f0; /* Un gris claro y común */
 
   /* 2. Añadir una línea de separación en la parte superior */
