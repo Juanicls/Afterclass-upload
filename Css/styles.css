@@ -59,7 +59,7 @@ Inicio
 
 .back-img {
     width: 100%;
-    background-image: url(/Media/img/img-back2.png);
+    background-image: url(Media/img/img-back2.png);
     filter: opacity(90%);
     background-size: cover;
     background-repeat: no-repeat;
@@ -332,4 +332,5 @@ footer {
   /* 3. (Opcional pero recomendado) Añadir un poco de espacio */
   padding: 15px;
 }
+
 
